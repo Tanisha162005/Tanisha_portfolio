@@ -1,22 +1,117 @@
 ---
 const achievements = [
-  "1st Place \u2014 GDG On Campus Hackathon, DY Patil Kolhapur",
-  "Core Member, E-Cell \u00B7 Technical Member, Data Polaris",
-  "Guest speaker \u2014 AI fundamentals & future technologies",
+  "1st Place — GDG On Campus Hackathon, DY Patil Kolhapur",
+  "Core Member, E-Cell · Technical Member, Data Polaris",
+  "Guest speaker — AI fundamentals & future technologies",
   "5+ hackathons, 1 bootcamp, multiple AI events attended"
 ];
+
+const stats = [
+  { value: 9.2, suffix: " GPA", label: "Academic Excellence", isFloat: true },
+  { value: 5, suffix: "+", label: "Hackathons", isFloat: false },
+  { value: 1, suffix: "st", label: "Place at GDG Hackathon", isFloat: false },
+];
 ---
-<section id="achievements" class="mb-16 scroll-mt-24 lg:mb-24" aria-label="Achievements">
-  <h3 class="text-[22px] font-display font-medium text-text mb-6">Achievements</h3>
+<section id="achievements" class="mb-32 scroll-mt-24 pt-12" aria-label="Achievements">
+  <div class="gsap-reveal flex items-center gap-6 mb-16">
+    <h3 class="text-4xl md:text-5xl font-display font-bold text-text">Achievements</h3>
+    <div class="h-px bg-glass-border flex-grow"></div>
+  </div>
   
-  <ul class="space-y-4">
-    {achievements.map(item => (
-      <li class="flex items-start">
-        <svg class="h-6 w-6 shrink-0 text-accent mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+    {stats.map(stat => (
+      <div class="gsap-stat-card p-8 glass-panel border-gradient-glow text-center">
+        <div class="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#22D3EE] mb-2">
+          <span class="gsap-counter" data-target={stat.value} data-float={stat.isFloat ? "true" : "false"}>0</span>{stat.suffix}
+        </div>
+        <div class="text-sm font-bold text-text-muted uppercase tracking-widest mt-4">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+
+  <ul class="space-y-6">
+    {achievements.map((item, i) => (
+      <li class="gsap-achievement-item flex items-start p-6 bg-surface-hi/40 rounded-xl border border-glass-border hover:border-accent-pop/30 transition-colors duration-300">
+        <svg class="h-6 w-6 shrink-0 text-accent-pop mr-4 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <span class="text-[17px] leading-[1.6] text-text-muted">{item}</span>
+        <span class="text-lg leading-[1.6] text-text-muted">{item}</span>
       </li>
     ))}
   </ul>
 </section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Stat cards reveal
+    const statCards = document.querySelectorAll('.gsap-stat-card');
+    if (statCards.length > 0) {
+      gsap.fromTo(statCards,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: "#achievements",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+
+    // Number counters
+    const counters = document.querySelectorAll('.gsap-counter');
+    counters.forEach(counter => {
+      const target = parseFloat(counter.getAttribute('data-target') || '0');
+      const isFloat = counter.getAttribute('data-float') === 'true';
+      
+      ScrollTrigger.create({
+        trigger: counter,
+        start: "top 85%",
+        onEnter: () => {
+          gsap.to(counter, {
+            innerHTML: target,
+            duration: 2.5,
+            ease: "power2.out",
+            snap: { innerHTML: isFloat ? 0.1 : 1 },
+            onUpdate: function() {
+              if (isFloat) {
+                counter.innerHTML = Number(this.targets()[0].innerHTML).toFixed(1);
+              }
+            }
+          });
+        },
+        once: true
+      });
+    });
+
+    // List items reveal
+    const listItems = document.querySelectorAll('.gsap-achievement-item');
+    if (listItems.length > 0) {
+      gsap.fromTo(listItems,
+        { x: -20, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: listItems[0],
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+  });
+</script>
