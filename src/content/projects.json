@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Asynchronous Federated Learning with Robust Aggregation",
+    "description": "Privacy-preserving federated learning system for decentralized training across clients, with robust aggregation to handle noisy updates and improve convergence on IID and non-IID data.",
+    "tags": ["Federated Learning", "Robust Aggregation", "Distributed Systems", "Python"],
+    "link": "#"
+  },
+  {
+    "title": "AI-Powered Automotive Customer Sentiment & Insights Platform",
+    "description": "Analyzes social media and customer opinions on automobiles — sentiment classification and preference analytics, plus a functional AI chatbot prototype for conversational access to results.",
+    "tags": ["NLP", "Sentiment Analysis", "Text Classification", "Conversational AI"],
+    "link": "#"
+  },
+  {
+    "title": "AI-Based Behavior-Aware Personalized Fraud Detection System",
+    "description": "Personalized fraud detection using dynamic spending profiles, combining anomaly detection (Isolation Forest, One-Class SVM) with XGBoost for real-time, explainable risk scoring.",
+    "tags": ["Isolation Forest", "One-Class SVM", "XGBoost", "Machine Learning"],
+    "link": "#"
+  },
+  {
+    "title": "The Predictive Smart Inventory Supply Allocation Agent",
+    "description": "An agentic AI system for smart inventory and supply allocation prediction.",
+    "tags": ["Python", "AI", "Agentic System"],
+    "link": "https://github.com/Tanisha162005/The-Predictive-Smart-Inventory-Supply-Allocation-Agent."
+  },
+  {
+    "title": "Conversational AI Data Annotation QA Pipeline",
+    "description": "A quality assurance pipeline for conversational AI data annotation.",
+    "tags": ["Python", "NLP", "QA", "Conversational AI"],
+    "link": "https://github.com/Tanisha162005/Conversational-AI-Data-Annotation-QA-Pipeline"
+  },
+  {
+    "title": "Om Sai Financial Services",
+    "description": "Website development for Om Sai Financial Services.",
+    "tags": ["HTML", "Web Development"],
+    "link": "https://github.com/Tanisha162005/om-sai-financial-services-"
+  },
+  {
+    "title": "Sushant Content Creation Masterclass",
+    "description": "Website development for Sushant Ghadge.",
+    "tags": ["TypeScript", "Web Development"],
+    "link": "https://github.com/Tanisha162005/sushant_website"
+  },
+  {
+    "title": "Tanisha Portfolio",
+    "description": "My personal portfolio website featuring professional projects and freelance work.",
+    "tags": ["Astro", "Tailwind CSS", "Web Development"],
+    "link": "https://github.com/Tanisha162005/Tanisha_portfolio"
+  }
+]

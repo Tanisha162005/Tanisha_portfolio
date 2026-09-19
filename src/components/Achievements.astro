@@ -1,0 +1,22 @@
+---
+const achievements = [
+  "1st Place \u2014 GDG On Campus Hackathon, DY Patil Kolhapur",
+  "Core Member, E-Cell \u00B7 Technical Member, Data Polaris",
+  "Guest speaker \u2014 AI fundamentals & future technologies",
+  "5+ hackathons, 1 bootcamp, multiple AI events attended"
+];
+---
+<section id="achievements" class="mb-16 scroll-mt-24 lg:mb-24" aria-label="Achievements">
+  <h3 class="text-[22px] font-display font-medium text-text mb-6">Achievements</h3>
+  
+  <ul class="space-y-4">
+    {achievements.map(item => (
+      <li class="flex items-start">
+        <svg class="h-6 w-6 shrink-0 text-accent mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="text-[17px] leading-[1.6] text-text-muted">{item}</span>
+      </li>
+    ))}
+  </ul>
+</section>

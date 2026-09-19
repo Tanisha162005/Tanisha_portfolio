@@ -1,0 +1,24 @@
+---
+const skillGroups = [
+  { category: "Programming", skills: ["Python", "SQL"] },
+  { category: "AI/ML", skills: ["Machine Learning", "NLP", "Data Preprocessing", "Model Evaluation"] },
+  { category: "Frameworks", skills: ["Flask", "LangChain", "Pandas", "NumPy", "Matplotlib", "Seaborn"] },
+  { category: "GenAI & Tools", skills: ["OpenAI APIs", "MCPs", "n8n", "RAG", "Vector DBs", "Docker", "AWS", "GitHub"] }
+];
+---
+<section class="mb-16 lg:mb-24" aria-label="Skills">
+  <div class="space-y-6">
+    {skillGroups.map(group => (
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-widest text-text mb-3">{group.category}</h4>
+        <ul class="flex flex-wrap gap-2" aria-label={`Skills in ${group.category}`}>
+          {group.skills.map(skill => (
+            <li class="flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium leading-5 text-accent">
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

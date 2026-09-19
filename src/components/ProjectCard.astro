@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+}
+
+const { title, description, tags, link } = Astro.props;
+---
+
+<div class="group relative flex flex-col items-start gap-4 p-6 glass-panel transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] hover:border-accent/30 hover:-translate-y-1">
+  <div class="absolute inset-0 bg-gradient-to-r from-accent/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+  
+  <div class="relative z-10 w-full">
+    <h3 class="text-xl font-display font-medium text-text group-hover:text-accent transition-colors duration-300">
+      <a href={link} class="focus-visible:text-accent" target="_blank" rel="noreferrer">
+        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+        {title}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+      </a>
+    </h3>
+    
+    <p class="mt-3 text-sm leading-relaxed text-text-muted">
+      {description}
+    </p>
+    
+    <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
+      {tags.map(tag => (
+        <li class="flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium leading-5 text-accent border border-accent/20">
+          {tag}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
