@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-violet-bg-center: #1A0F1F;
+  --color-violet-bg-edge: #0D0810;
+  
+  --color-violet-primary: #502D55;
+  --color-violet-secondary: #935073;
+  --color-violet-accent: #F6DBC0;
+  --color-violet-light: #F8F4E9;
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+  body {
+    @apply bg-violet-bg-edge text-violet-light font-sans antialiased overflow-x-hidden;
+    background: radial-gradient(circle at center, var(--color-violet-bg-center) 0%, var(--color-violet-bg-edge) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, var(--color-violet-primary), var(--color-violet-secondary), var(--color-violet-accent), var(--color-violet-light));
+  }
+  
+  .bg-gradient-accent {
+    background-image: linear-gradient(90deg, var(--color-violet-primary), var(--color-violet-secondary), var(--color-violet-accent), var(--color-violet-light));
+  }
+
+  .glass-pill {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-[32px] shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+}
+
+/* Corner Bracket Frames */
+.corner-brackets {
+  position: relative;
+}
+
+.corner-brackets::before,
+.corner-brackets::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: var(--color-violet-secondary);
+  border-style: solid;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.corner-brackets:hover::before,
+.corner-brackets:hover::after {
+  opacity: 1;
+}
+
+.corner-brackets::before {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+
+.corner-brackets::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
+
+/* Custom Cursor styles handled by a separate Cursor component or global if preferred, let's keep it here for simplicity and target with JS later */
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-violet-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-violet-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-cursor-ring.hovering {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(246, 219, 192, 0.1);
+  backdrop-filter: blur(2px);
+  border-color: transparent;
+}
+
+.custom-cursor-ring.hovering::after {
+  content: 'view';
+  color: var(--color-violet-light);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Hide default cursor only when the custom cursor is active via body class */
+body.has-custom-cursor,
+body.has-custom-cursor * {
+  cursor: none !important;
+}
