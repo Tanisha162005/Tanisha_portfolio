@@ -4,83 +4,79 @@ const navItems = [
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Achievements', href: '#achievements' },
+  { name: 'Contact', href: '#contact' },
   { name: 'Resume', href: '/resume.pdf', external: true },
 ];
 ---
 
-<header id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 border-b border-transparent">
-  <div class="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between">
-    <!-- Brand / Logo -->
-    <a href="#" class="group flex items-center gap-3 gsap-nav-item">
-      <div class="w-10 h-10 rounded-xl bg-surface-hi border border-glass-border flex items-center justify-center text-text font-display font-bold text-xl group-hover:border-accent transition-colors duration-300">
+<header id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 border-b border-transparent">
+  <div class="max-w-[1100px] mx-auto px-6 md:px-12 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="#" class="group flex items-center gap-3 nav-item" id="nav-brand">
+      <div class="w-9 h-9 rounded-lg flex items-center justify-center text-lg transition-colors duration-150" style="background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); font-family: var(--font-display); font-weight: 500;">
         T
       </div>
-      <div>
-        <h1 class="text-xl font-display font-bold text-text tracking-tight group-hover:text-accent transition-colors duration-300">
-          Tanisha Badgujar
-        </h1>
-      </div>
+      <h1 class="text-lg transition-colors duration-150" style="font-family: var(--font-display); font-weight: 500; color: var(--color-text); letter-spacing: -0.01em; font-size: 1.125rem; line-height: 1.3;">
+        Tanisha Badgujar
+      </h1>
     </a>
 
-    <!-- Mobile Hamburger -->
-    <button id="mobile-menu-btn" class="lg:hidden text-text hover:text-accent focus:outline-none p-2 -mr-2 transition-colors gsap-nav-item" aria-label="Toggle menu">
+    <!-- Mobile hamburger -->
+    <button id="mobile-menu-btn" class="lg:hidden p-2 -mr-2 transition-colors duration-150" style="color: var(--color-text-muted);" aria-label="Toggle menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
-    <!-- Desktop Navigation -->
-    <div class="hidden lg:flex items-center gap-8 relative">
-      <nav aria-label="Main Navigation" class="relative">
-        <div id="nav-pill" class="absolute top-1/2 left-0 h-9 -translate-y-1/2 bg-surface-hi border border-glass-border rounded-lg pointer-events-none opacity-0 transition-opacity"></div>
-        <ul class="flex items-center gap-2 relative z-10">
+    <!-- Desktop navigation -->
+    <div class="hidden lg:flex items-center gap-8">
+      <nav aria-label="Main navigation">
+        <ul class="flex items-center gap-1">
           {navItems.map(item => (
-            <li class="gsap-nav-item">
-              <a class="nav-link block px-4 py-2 text-sm font-medium text-text-muted hover:text-text transition-colors duration-300 relative" href={item.href} target={item.external ? "_blank" : undefined}>
+            <li>
+              <a
+                class="nav-link block px-3.5 py-2 text-sm transition-colors duration-150 rounded-md"
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                style="color: var(--color-text-muted); font-weight: 400;"
+              >
                 {item.name}
               </a>
             </li>
           ))}
         </ul>
       </nav>
-      
-      <div class="h-6 w-px bg-glass-border gsap-nav-item"></div>
 
-      <!-- Socials -->
-      <ul class="flex items-center gap-3 gsap-nav-item" aria-label="Social media">
+      <div class="h-5 w-px" style="background: var(--color-border);"></div>
+
+      <!-- Social icons -->
+      <ul class="flex items-center gap-2" aria-label="Social links">
         <li>
-          <a href="mailto:tanisha.c.badgujar@gmail.com" class="text-text-muted hover:text-text transition-colors rounded-full p-2 block border border-transparent hover:border-glass-border hover:bg-surface-hi" target="_blank" rel="noreferrer" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
-              <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-              <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-            </svg>
+          <a href="mailto:tanisha.c.badgujar@gmail.com" class="social-icon" target="_blank" rel="noreferrer" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" /><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" /></svg>
           </a>
         </li>
         <li>
-          <a href="https://linkedin.com/in/tanisha-badgujar" class="text-text-muted hover:text-text transition-colors rounded-full p-2 block border border-transparent hover:border-glass-border hover:bg-surface-hi" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
-              <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V10h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
-            </svg>
+          <a href="https://linkedin.com/in/tanisha-badgujar" class="social-icon" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V10h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
           </a>
         </li>
         <li>
-          <a href="https://github.com/Tanisha162005" class="text-text-muted hover:text-text transition-colors rounded-full p-2 block border border-transparent hover:border-glass-border hover:bg-surface-hi" target="_blank" rel="noreferrer" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
-              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-            </svg>
+          <a href="https://github.com/Tanisha162005" class="social-icon" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
           </a>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- Mobile Menu Dropdown -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-surface-hi border-b border-glass-border">
-    <nav aria-label="Mobile Navigation" class="px-6 py-4">
-      <ul class="flex flex-col gap-2">
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden" style="background: var(--color-surface); border-bottom: 1px solid var(--color-border);">
+    <nav aria-label="Mobile navigation" class="px-6 py-4">
+      <ul class="flex flex-col gap-1">
         {navItems.map(item => (
           <li>
-            <a class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-text-muted hover:text-text hover:bg-surface transition-colors" href={item.href} target={item.external ? "_blank" : undefined}>
+            <a class="mobile-nav-link block px-4 py-3 rounded-md text-base transition-colors duration-150" href={item.href} target={item.external ? "_blank" : undefined} style="color: var(--color-text-muted); font-weight: 400;">
               {item.name}
             </a>
           </li>
@@ -90,6 +86,34 @@ const navItems = [
   </div>
 </header>
 
+<style>
+  .social-icon {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: var(--color-text-muted);
+    border: 1px solid transparent;
+    transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+  }
+  .social-icon:hover {
+    color: var(--color-accent);
+    border-color: var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .nav-link:hover {
+    color: var(--color-text) !important;
+  }
+  .nav-link.is-active {
+    color: var(--color-accent) !important;
+  }
+
+  .mobile-nav-link:hover {
+    color: var(--color-text) !important;
+    background: var(--color-surface);
+  }
+</style>
+
 <script>
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -97,84 +121,56 @@ const navItems = [
   gsap.registerPlugin(ScrollTrigger);
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Nav appearance on load
-    gsap.fromTo('.gsap-nav-item', 
-      { y: -20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" }
+    // Nav entrance
+    const navItems = document.querySelectorAll('.nav-item, .nav-link, .social-icon');
+    gsap.fromTo(navItems, 
+      { y: -15, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, stagger: 0.05, ease: "power3.out" }
     );
 
-    // Sticky nav shrink/blur on scroll
+    // Sticky shrink on scroll
     const nav = document.getElementById('main-nav');
     if (nav) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-          nav.classList.add('bg-[rgba(10,14,23,0.8)]', 'backdrop-blur-xl', 'py-4', '!border-glass-border');
-          nav.classList.remove('py-6', 'border-transparent');
+          nav.style.background = 'rgba(25, 18, 37, 0.85)';
+          nav.style.backdropFilter = 'blur(12px)';
+          nav.style.webkitBackdropFilter = 'blur(12px)';
+          nav.style.paddingTop = '0.75rem';
+          nav.style.paddingBottom = '0.75rem';
+          nav.style.borderBottomColor = 'var(--color-border)';
         } else {
-          nav.classList.add('py-6', 'border-transparent');
-          nav.classList.remove('bg-[rgba(10,14,23,0.8)]', 'backdrop-blur-xl', 'py-4', '!border-glass-border');
+          nav.style.background = 'transparent';
+          nav.style.backdropFilter = 'none';
+          nav.style.webkitBackdropFilter = 'none';
+          nav.style.paddingTop = '1.25rem';
+          nav.style.paddingBottom = '1.25rem';
+          nav.style.borderBottomColor = 'transparent';
         }
       });
     }
 
-    // Pill animation for desktop nav
+    // Scroll spy — active link highlighting
     const links = document.querySelectorAll('.nav-link');
-    const pill = document.getElementById('nav-pill');
-    
-    if (pill && links.length > 0) {
-      let activeLink: Element | null = null;
-      
-      const movePill = (el: Element, animate = true) => {
-        const rect = el.getBoundingClientRect();
-        const parentElement = el.parentElement?.parentElement as HTMLElement;
-        if (!parentElement) return;
-        const parentRect = parentElement.getBoundingClientRect();
-        
-        gsap.to(pill, {
-          x: rect.left - parentRect.left,
-          width: rect.width,
-          opacity: 1,
-          duration: animate ? 0.35 : 0,
-          ease: "power3.out"
-        });
-      };
+    const sections = document.querySelectorAll('section[id]');
 
-      // Hover
-      links.forEach(link => {
-        link.addEventListener('mouseenter', () => movePill(link));
-        link.addEventListener('mouseleave', () => {
-          if (activeLink) {
-            movePill(activeLink);
-          } else {
-            gsap.to(pill, { opacity: 0, duration: 0.3 });
+    sections.forEach(section => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top center',
+        end: 'bottom center',
+        onToggle: self => {
+          if (self.isActive) {
+            const id = section.getAttribute('id');
+            const link = document.querySelector(`.nav-link[href="#${id}"]`);
+            links.forEach(l => l.classList.remove('is-active'));
+            if (link) link.classList.add('is-active');
           }
-        });
+        }
       });
+    });
 
-      // Scroll Spy
-      const sections = document.querySelectorAll('section[id]');
-      sections.forEach(section => {
-        ScrollTrigger.create({
-          trigger: section,
-          start: "top center",
-          end: "bottom center",
-          onToggle: self => {
-            if (self.isActive) {
-              const id = section.getAttribute('id');
-              const link = document.querySelector(`.nav-link[href="#${id}"]`);
-              if (link) {
-                activeLink = link;
-                links.forEach(l => l.classList.remove('text-text'));
-                link.classList.add('text-text');
-                movePill(link);
-              }
-            }
-          }
-        });
-      });
-    }
-
-    // Mobile Menu Toggle
+    // Mobile menu toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     const path = document.getElementById('menu-icon-path');
