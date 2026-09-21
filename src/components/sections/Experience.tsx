@@ -29,7 +29,7 @@ const experience = [
   {
     role: "AI/ML Intern",
     company: "CICD Prosystems",
-    period: "Jun 2025 – Aug 2025",
+    period: "Jun 2026 – Aug 2026",
     description: "Worked on AI/ML tasks including data preprocessing, model building, and evaluation, gaining hands-on exposure to applying machine learning techniques to real-world problems."
   }
 ];
