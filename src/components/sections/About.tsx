@@ -54,22 +54,47 @@ export default function About() {
             </p>
           </motion.div>
 
-          {/* Stats Grid */}
-          <motion.div variants={item} className="grid grid-cols-2 gap-4 md:gap-6">
-            {stats.map((stat, i) => (
+          {/* Photo & Stats */}
+          <motion.div variants={item} className="flex flex-col items-center gap-8">
+            {/* Profile Photo */}
+            <div className="relative group">
+              {/* Animated glow ring */}
               <motion.div
-                key={i}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="glass-card p-6 md:p-8 flex flex-col justify-center items-center text-center group hover-trigger border border-white/5 hover:border-violet-secondary/30 transition-colors"
-              >
-                <span className="text-3xl md:text-4xl font-display font-bold text-violet-accent mb-2 group-hover:scale-110 transition-transform">
-                  {stat.value}
-                </span>
-                <span className="text-sm font-medium text-violet-light/60 uppercase tracking-wider">
-                  {stat.label}
-                </span>
-              </motion.div>
-            ))}
+                className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-violet-primary via-violet-secondary to-violet-accent opacity-40 blur-xl group-hover:opacity-70 transition-opacity duration-500"
+                animate={{
+                  rotate: [0, 360],
+                }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              {/* Border frame */}
+              <div className="relative w-64 h-72 md:w-72 md:h-80 rounded-3xl overflow-hidden border-2 border-white/10 group-hover:border-violet-secondary/50 transition-colors duration-500">
+                <img
+                  src="/me.jpeg"
+                  alt="Tanisha"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Subtle gradient overlay at bottom */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-violet-bg-center/80 to-transparent" />
+              </div>
+            </div>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-4 md:gap-5 w-full max-w-sm">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  className="glass-card !rounded-2xl p-5 md:p-6 flex flex-col justify-center items-center text-center group hover-trigger border border-white/5 hover:border-violet-secondary/30 transition-colors"
+                >
+                  <span className="text-2xl md:text-3xl font-display font-bold text-violet-accent mb-1 group-hover:scale-110 transition-transform">
+                    {stat.value}
+                  </span>
+                  <span className="text-xs font-medium text-violet-light/60 uppercase tracking-wider">
+                    {stat.label}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </motion.div>
       </div>

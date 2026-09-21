@@ -7,6 +7,7 @@ import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
 import AcademicProjects from "@/components/sections/AcademicProjects";
 import FreelanceProjects from "@/components/sections/FreelanceProjects";
+import Events from "@/components/sections/Events";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <Experience />
         <AcademicProjects />
         <FreelanceProjects />
+        <Events />
         <Footer />
       </div>
     </>
