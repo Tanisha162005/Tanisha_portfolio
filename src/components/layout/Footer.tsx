@@ -87,7 +87,7 @@ export default function Footer() {
               <MagneticIcon href="https://github.com/Tanisha162005">
                 <Code2 size={24} />
               </MagneticIcon>
-              <MagneticIcon href="https://linkedin.com">
+              <MagneticIcon href="https://www.linkedin.com/in/tanisha-badgujar-00b251299">
                 <Briefcase size={24} />
               </MagneticIcon>
             </div>
