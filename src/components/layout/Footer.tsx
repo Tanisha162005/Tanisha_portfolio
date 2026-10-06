@@ -157,7 +157,6 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-violet-light/50 text-sm">
           <p>© {new Date().getFullYear()} Tanisha. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Designed & Built with Next.js & Framer Motion</p>
         </div>
       </motion.div>
     </footer>

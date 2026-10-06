@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { GraduationCap, Briefcase, Trophy, ChevronRight } from "lucide-react";
+import { GraduationCap, Briefcase, Trophy, ChevronRight, ExternalLink } from "lucide-react";
 
 const education = [
   {
@@ -35,10 +35,10 @@ const experience = [
 ];
 
 const activities = [
-  "1st Place – GDG On Campus Hackathon, DY Patil Kolhapur",
-  "Core Member – E-Cell; Technical Member – Data Polaris",
-  "Invited as guest speaker to conduct sessions on AI fundamentals and future technologies for students.",
-  "Attended 5+ hackathons, 1 bootcamp, and multiple AI events."
+  { text: "1st Place – GDG On Campus Hackathon, DY Patil Kolhapur", link: "https://www.linkedin.com/feed/update/urn:li:activity:7419244741160206336/" },
+  { text: "Core Member – E-Cell; Technical Member – Data Polaris" },
+  { text: "Invited as guest speaker to conduct sessions on AI fundamentals and future technologies for students.", link: "https://www.linkedin.com/feed/update/urn:li:activity:7350175301684908033/" },
+  { text: "Attended 5+ hackathons, 1 bootcamp, and multiple AI events." }
 ];
 
 export default function Experience() {
@@ -157,9 +157,22 @@ export default function Experience() {
                     className="flex items-start gap-3 glass-card p-4 hover:bg-white/[0.03] transition-colors rounded-2xl"
                   >
                     <ChevronRight className="text-violet-accent mt-0.5 shrink-0" size={18} />
-                    <p className="text-violet-light/80 text-sm leading-relaxed">
-                      {activity}
-                    </p>
+                    <div className="flex-1">
+                      <p className="text-violet-light/80 text-sm leading-relaxed">
+                        {activity.text}
+                      </p>
+                      {activity.link && (
+                        <a
+                          href={activity.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-violet-secondary hover:text-violet-accent transition-colors text-xs font-medium mt-2"
+                        >
+                          <ExternalLink size={12} />
+                          <span>View on LinkedIn</span>
+                        </a>
+                      )}
+                    </div>
                   </motion.div>
                 ))}
               </div>

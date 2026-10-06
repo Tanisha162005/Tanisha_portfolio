@@ -28,7 +28,7 @@ const events: Event[] = [
     type: "hackathon",
     emoji: "🏆",
     highlight: "🥇 First Prize Winners — ₹15,000",
-    linkedIn: undefined,
+    linkedIn: "https://www.linkedin.com/feed/update/urn:li:activity:7419244741160206336/",
   },
   {
     title: "CODECRAFT 2.0 – DEVHACKS 2026",
@@ -38,6 +38,7 @@ const events: Event[] = [
       "Shortlisted through an online technical interview in Round 1, qualifying the team for the main 24-hour offline hackathon.",
     type: "hackathon",
     emoji: "💻",
+    linkedIn: "https://www.linkedin.com/feed/update/urn:li:activity:7434307132151447552/",
   },
   {
     title: "GHRHack 2.0 – Code to Career",
@@ -47,8 +48,7 @@ const events: Event[] = [
       "36 hours of creativity, collaboration, and problem-solving. A journey from initial brainstorming to a complete strategic rework halfway through!",
     type: "hackathon",
     emoji: "💻",
-    linkedIn:
-      "https://www.linkedin.com/posts/sayali-jadhav-b4263827b_hackathon-studentdeveloper-techcommunity-activity-7438053728135471104-n5oK",
+    linkedIn: "https://www.linkedin.com/feed/update/urn:li:activity:7437159488643710976/",
   },
   {
     title: "SheInspires 2.0 Hackathon 2026",
@@ -67,6 +67,7 @@ const events: Event[] = [
       "Five-day immersive bootcamp on innovation and entrepreneurship. Gained hands-on problem-solving skills, design thinking, pitching skills, and advanced startup strategies through collaboration with bright minds across India.",
     type: "bootcamp",
     emoji: "🚀",
+    linkedIn: "https://www.linkedin.com/feed/update/urn:li:activity:7302345404170321920/",
   },
   {
     title: "COEP MindSpark Hackathon",
@@ -76,8 +77,7 @@ const events: Event[] = [
       "Qualified Round 1 of the prestigious 24-hour hackathon, competing among top student developers across India.",
     type: "hackathon",
     emoji: "⚡",
-    linkedIn:
-      "https://www.linkedin.com/posts/sayali-jadhav-b4263827b_coepmindspark25-tatamotors-hackathon-activity-7387331904510947328-JZp7",
+    linkedIn: "https://www.linkedin.com/feed/update/urn:li:activity:7387094029097902081/",
   },
   {
     title: "Smart India Hackathon (SIH)",
@@ -96,8 +96,6 @@ const events: Event[] = [
       "12-week transformative program for women in tech with mentorship, skill-building, and real-world AI/ML project experience.",
     type: "program",
     emoji: "🚀",
-    linkedIn:
-      "https://www.linkedin.com/posts/sayali-jadhav-b4263827b_infosysspringboard-pragatipathtofuture-learning-activity-7325932990776102912-qYxw",
   },
   {
     title: "Mumbai Tech Week – Mumb.AI",
@@ -107,8 +105,7 @@ const events: Event[] = [
       "Participated in Asia's largest AI event. Gained insights from visionary keynotes and networked with India's AI leaders.",
     type: "conference",
     emoji: "🤖",
-    linkedIn:
-      "https://www.linkedin.com/posts/sayali-jadhav-b4263827b_mumbaitechweek2025-airevolution-techinnovation-activity-7306503697595871232-9YVq",
+    linkedIn: "https://www.linkedin.com/feed/update/urn:li:activity:7306520270230429696/",
   },
   {
     title: "DevFest Indore – GDG",
@@ -118,8 +115,6 @@ const events: Event[] = [
       "Attended the AI/ML + Cloud track, learning from Google, IBM, and Infosys experts about AI for cloud security and serverless architecture.",
     type: "conference",
     emoji: "🤖",
-    linkedIn:
-      "https://www.linkedin.com/posts/sayali-jadhav-b4263827b_gdgindore-devfest2024-ai-activity-7278797876065943553-SuSO",
   },
 ];
 
